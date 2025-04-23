@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>  
+        .historyItem {
+            cursor: pointer;
+            padding: 5px;
+            margin: 5px;
+            background-color: #f0f0f0;
+        }
+        .historyItem:hover {
+            background-color: #e0e0e0;
+        }
+          </style>
+</head>
+<body>
+<div id="background" class="bg-cyan-800/50 rounded-lg sm:w-full md:w-2/3 lg:w-1/2 xl:w-4/10 m-2 border-4 border-cyan-900/75"><!--Calculator background-->
+
+    <div><!--Screen-->
+
+    <div class="border-2 border-gray-550 bg-sky-300/50 px-2 pt-2 pb-4 m-8 rounded-sm"><!--Calculator screen-->
+        <p id="previousCalculation" class="invisible whitespace-pre-wrap hidden sm:block text-md font-medium text-gray-700"><!--Previous Calculation-->0</p>
+        <p id="currentCalculation" class=" whitespace-pre-wrap text-5xl text-black"><!--Current Calculation-->0</p>
+    </div><!--Calculator screen-->
+
+    <div id=keyboard class="grid gap-2 text-md p-2 m-8 grid-cols-4 grid-rows-5 items-stretch text-3xl"><!--Keypad-->
+<button id="clear" class="rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">C</button>
+<button id="clearEntry" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">CE</button>
+<button id="backspace" class="rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">&larr;</button>
+<button id="divide" class="operation rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">/</button>
+<button id="nine" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">9</button>
+<button id="eight" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">8</button>
+<button id="seven" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">7</button>
+<button id="multiply" class="operation rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">X</button>
+<button id="six" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">6</button>
+<button id="five" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">5</button>
+<button id="four" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">4</button>
+<button id="subtract" class="operation rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">-</button>
+<button id="three" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">3</button>
+<button id="two" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">2</button>
+<button id="one" class="reset integer rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">1</button>
+<button id="add" class="operation rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">+</button>
+<button id="zero" class="reset integer rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">0</button>
+<button id="decimal" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">.</button>
+<button id="history"class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">History</button>
+<button id="equals" class="reset rounded-lg transition transition-colors duration-300 bg-emerald-200 hover:bg-emerald-100 border-1 border-gray-650 text-medium align-center text-center font-medium py-2">=</button>
+    </div><!--Keypad-->
+
+</div><!--Screen-->
+    
+    <div id="historyDiv" class="flex flow-col hidden"></div><!--Screen Expansion-->
+
+</div><!--Calculator background-->  
+<!--Notes
+sort out removing = 34
+sort out X
+-->
+    <script src="index.js"></script>
+</body>
+</html>
